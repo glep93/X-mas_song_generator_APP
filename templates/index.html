@@ -1,0 +1,15 @@
+<h1> Xmas Song Generator</h1>
+
+
+<form method="POST">
+  <textarea name="text" rows="10" cols="100">Write a seed text </textarea>
+  <br><br>
+  <input type="submit">
+</form>
+
+
+{% if method == "POST" %}
+  {% autoescape false %}
+      {{ song }}
+{% endautoescape %}
+{% endif %}
