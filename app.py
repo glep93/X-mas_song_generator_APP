@@ -2,14 +2,14 @@
 # coding: utf-8
 
 
-import re
-import numpy as np
-from tensorflow.keras.preprocessing.sequence import pad_sequences
-import pickle
-from keras.models import load_model
+#import re
+#import numpy as np
+#from tensorflow.keras.preprocessing.sequence import pad_sequences
+#import pickle
+#from keras.models import load_model
 
 from flask import Flask, request, render_template
-import gc
+#import gc
 
 #def preprocessing(x):
 #    x = x.lower()
@@ -48,13 +48,13 @@ app = Flask(__name__)
 
 @app.route('/')
 def my_form():
-    gc.collect()
+
     method = request.method
     return render_template('index.html', method= method)
 
 @app.route('/', methods=['POST'])
 def my_form_post():
-    gc.collect()
+
     text = request.form['text']
     processed_text =  'Lorem Ipsum'  #make_lyrics( text, 50)
 
@@ -64,4 +64,4 @@ def my_form_post():
     return render_template('index.html', method= method, song = song)
 
 
-app.run()
+app.run(threaded=True, port=5000)
