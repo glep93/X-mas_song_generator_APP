@@ -64,4 +64,6 @@ def my_form_post():
     return render_template('index.html', method= method, song = song)
 
 
-app.run(threaded=True, port=5000)
+if __name__ == '__main__':
+    # Threaded option to enable multiple instances for multiple user access support
+    app.run(threaded=True, port=5000)
