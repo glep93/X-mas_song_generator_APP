@@ -44,6 +44,7 @@ def make_lyrics( input, n_words):
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def my_form():
 
